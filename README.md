@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# matewere-data
 
-## Getting Started
+This is the code and data behind [data.matewere.dev](https://data.matewere.dev).
 
-First, run the development server:
+I clean a lot of Malawi climate data for my own projects, and most of it ends up sitting in a cache folder where nobody else can use it. This site is where I put the useful parts, in plain formats, with a note on where each number came from and what it can't tell you.
+
+The first dataset is Cyclone Freddy (March 2023): the storm's track from IBTrACS, CHIRPS daily rainfall and GPM IMERG hourly rainfall over southern Malawi, as grids and as tables for all 28 districts. It is the data behind [freddy.matewere.dev](https://freddy.matewere.dev).
+
+## Using the data
+
+Download what you need from the dataset page. Everything is CC BY 4.0, so use it however you like and credit it. Please cite the original sources too; they are listed on each page. Each folder in `public/files/` has a `manifest.json` with file sizes and SHA-256 checksums.
+
+If you find a mistake, email hello@matewere.dev or open an issue.
+
+## How it fits together
+
+Each dataset is written up once in `src/lib/datasets.ts`. The page, the sitemap and the structured metadata that Google Dataset Search reads all come from that entry, so nothing is typed twice.
+
+The files themselves are produced by the project that made them. For Freddy that is `pipeline/export.py` in the freddy-replay repo, which is private for now; the method is written out in full on the dataset page. To rebuild the files from there:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd freddy-replay/pipeline
+uv run python imerg.py      # needs EARTHDATA_TOKEN in pipeline/.env
+uv run python export.py ../../matewere-data/public/files/freddy-2023
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running it locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Jimmy Matewere, [matewere.dev](https://matewere.dev)

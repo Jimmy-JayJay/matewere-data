@@ -1,0 +1,45 @@
+{
+ "generated": "2026-10-27T17:17:50Z",
+ "files": [
+  {
+   "name": "chirps-daily.nc",
+   "bytes": 359210,
+   "sha256": "22dd8ee926b2625f2cd8c1408e3554a88155e280fffe6a2270685a7de204f86b"
+  },
+  {
+   "name": "chirps-district-daily.csv",
+   "bytes": 10487,
+   "sha256": "963edb44f6b77a7d5a2fc29633e2378a619ab42f586182a8762a0cb8d8a761c9"
+  },
+  {
+   "name": "chirps-total.tif",
+   "bytes": 74767,
+   "sha256": "e60b2e8a8e1ae55a1dbbdbb8e8d629a7f8d2985cae80d41c5c1672454b2f324b"
+  },
+  {
+   "name": "districts.geojson",
+   "bytes": 808529,
+   "sha256": "5d1840b4c11dc39947210356279366dce59c1670a1630d4b157f6763902fdd57"
+  },
+  {
+   "name": "imerg-district-hourly.csv",
+   "bytes": 168416,
+   "sha256": "3c44277e58bcfe53755ddc5801804d9bad769b638f12ad340c8077169b5186fb"
+  },
+  {
+   "name": "imerg-hourly.nc",
+   "bytes": 1215738,
+   "sha256": "3c1ed6bb41843afea8774d87db6eb2d0aeeab0f02598cd72b4afec001157ad5d"
+  },
+  {
+   "name": "track.csv",
+   "bytes": 16096,
+   "sha256": "e8e38d0f25c57a02c54940fb95a4b03ba90e86daf3eddfdbb1ceecae9abfcb02"
+  },
+  {
+   "name": "track.geojson",
+   "bytes": 69601,
+   "sha256": "7525701a425bf080ff024ce2cd0481ad1adf9dc99acaa9961b7cef3e334a2320"
+  }
+ ]
+}
