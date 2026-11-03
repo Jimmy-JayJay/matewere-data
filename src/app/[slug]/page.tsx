@@ -12,7 +12,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<'/[slug]'>): Promise<Metadata> {
   const d = getDataset((await params).slug)
   if (!d) return {}
-  return { title: d.title, description: d.summary, alternates: { canonical: `/${d.slug}` } }
+  return {
+    title: d.title,
+    description: d.summary,
+    alternates: { canonical: `/${d.slug}` },
+    openGraph: { type: 'website', title: d.title, description: d.summary, url: `/${d.slug}` },
+  }
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {

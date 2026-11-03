@@ -37,6 +37,8 @@ export type Dataset = {
   released: string // ISO date
   title: string
   summary: string
+  shareTitle: string // short title for the share card
+  shareLine: string // one line under it on the share card
   keywords: string[]
   temporalCoverage: string // ISO 8601 interval
   bbox: [west: number, south: number, east: number, north: number]
@@ -64,6 +66,8 @@ const freddy: Dataset = {
   title: 'Cyclone Freddy over Malawi, March 2023: track and rainfall',
   summary:
     'The best track of Tropical Cyclone Freddy, the longest-lived tropical cyclone on record, and the rain it brought to southern Malawi: CHIRPS daily rainfall for 6 to 16 March 2023 and GPM IMERG hourly rainfall for 10 to 16 March, as grids and as per-district tables for all 28 districts.',
+  shareTitle: 'Cyclone Freddy over Malawi, March 2023',
+  shareLine: 'The storm track, and daily and hourly rainfall for all 28 districts.',
   keywords: [
     'Cyclone Freddy',
     'Malawi',
